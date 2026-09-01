@@ -7,7 +7,6 @@ public:
     LRUCache(int capacity) {
         this->capacity=capacity;
     }
-    
     int get(int key) {
         if(cache.find(key)==cache.end())return -1;
         od.erase(cache[key].second);
@@ -15,7 +14,6 @@ public:
         cache[key].second=--od.end();
         return cache[key].first;
     }
-    
     void put(int key, int value) {
         if(cache.find(key)!=cache.end()){
             od.erase(cache[key].second);
